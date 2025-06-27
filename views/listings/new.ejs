@@ -1,0 +1,59 @@
+<% layout("layouts/boilerplate")%>
+<div class="row">
+    <div class="col-8 offset-2"><!--it will occupy 8 columns and offset is 2 -->
+        <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+            <!-- enctype is set to send the form data not urlencoded by multipart form that supports files -->
+            <h1>Create a New Listing</h1>
+            <br>
+            <div class="mb-3">
+                <label for="title" class="form-label">Title: </label>
+                <input name="title" class="form-control" placeholder="Add a catchy title" type="text" required />
+                <div class="valid-feedback">Title looks good!</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description: </label>
+                <textarea name="description" class="form-control" required></textarea>
+                <div class="invalid-feedback">please enter short description</div>
+                
+            </div>
+
+            <!-- <div class="mb-3">
+                <label for="image" class="form-label">Image: </label>
+                <input name="image" class="form-control" placeholder="Image URL/Link" type="text"/>
+            </div> -->
+
+            <div class="mb-3">
+                <label for="image" class="form-label">Image: </label>
+                <input name="image" class="form-control"  type="file" required/>
+            </div>
+
+            <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label for="price" class="form-label">Price: </label>
+                    <input name="price" class="form-control" placeholder="1200" type="text" required/>
+                    <div class="invalid-feedback">please enter a valid price</div>
+                </div>
+    
+                <div class="mb-3 col-md-8">
+                    <label for="country" class="form-label">Country: </label>
+                    <input name="country" class="form-control" placeholder="India" type="text" required/>
+                    <div class="invalid-feedback">please enter country name</div>
+                </div>
+                
+            </div>
+            
+            <div class="mb-3">
+                <label for="location" class="form-label">Location: </label>
+                <input name="location" class="form-control" placeholder="Jaipur, Rajasthan" type="text" required/>
+                <div class="invalid-feedback">please enter location</div>
+            </div>
+
+            <br><br>
+            <div class="mb-3">
+                <button class="btn btn-primary add-btn">Add</button>
+            </div>
+            <br><br>
+        </form>
+    </div>
+</div>
